@@ -1,12 +1,22 @@
+MINIMUM_NUMBER = 0
+
+
 def main():
+    password = validate_input()
+    print_asterisks(password)
+
+
+def validate_input():
+    """identified the user input"""
     password = input("password: ")
-    get_password(password)
-
-
-def get_password(password):
-    while len(password) <= 0:
+    while len(password) <= MINIMUM_NUMBER:
         print("Invalid password")
         password = input("password: ")
+    return password
+
+
+def print_asterisks(password):
+    """print asterisks"""
     print(len(password) * "*")
 
 
